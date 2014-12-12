@@ -1,0 +1,3 @@
+describe Tour do
+
+end

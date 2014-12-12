@@ -1,0 +1,3 @@
+describe Amenity do
+
+end
