@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
 
   def signup_confirmation(user)
     @user = user
-    @url = "http://localhost:3000/user/#{@user.id}/edit"
+    @url = "http://localhost:3000/users/#{@user.id}/edit"
     @email = @user.email
     mail(to: @email, subject: 'Click link below to schedule tour')
   end
