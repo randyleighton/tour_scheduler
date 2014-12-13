@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @user.ip_address = Request.ip
+    @user.ip_address = request.env["HTTP_X_FORWARDED_FOR"]
     binding.pry
   end
 
