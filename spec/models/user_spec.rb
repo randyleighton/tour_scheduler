@@ -9,4 +9,8 @@ describe User do
     expect(FactoryGirl.build(:user)).to be_valid
   end
 
+  it "should require a first name" do
+    expect(FactoryGirl.build(:user, :first_name => "")).to_not be_valid
+  end
+
 end
