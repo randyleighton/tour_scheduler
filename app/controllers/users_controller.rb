@@ -5,16 +5,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
     if @user.valid?
       # send mail to user to sign up for tour
-      render @user, notice: "Successfully entered email: #{@user.email}"
+      redirect_to user_path(@user), notice: "Successfully entered email: #{@user.email}"
     else
       render 'new', notice: "Failed to create, try again."
-
+    end
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
 private
