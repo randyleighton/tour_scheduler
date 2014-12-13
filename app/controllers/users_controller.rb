@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+    @user.ip_address = Request.ip
+    binding.pry
+  end
+
   def show
     @user = User.find(params[:id])
   end
