@@ -15,4 +15,14 @@ describe User do
     expect(FactoryGirl.build(:user, :first_name => "")).to_not be_valid
   end
 
+  
+describe "signup_confirmation" do
+    user = FactoryGirl.create(:user)
+    let(:mail) { UserMailer.signup_confirmation(user) }
+
+    it "renders the subject" do
+      expect(mail.subject).to eq("Click link below to schedule tour")
+    end
+  end
+
 end
