@@ -26,6 +26,9 @@ describe "signup_confirmation" do
     it "renders the mail to address" do
       expect(mail.to).to eq(["jake@yahoo.com"])
     end
+    it "renders the from address" do
+      expect(mail.from).to eq("\"The Tour Scheduler\" tour@example.com")
+    end
 
 
   end
