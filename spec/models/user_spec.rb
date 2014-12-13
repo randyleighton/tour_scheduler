@@ -23,6 +23,11 @@ describe "signup_confirmation" do
     it "renders the subject" do
       expect(mail.subject).to eq("Click link below to schedule tour")
     end
+    it "renders the mail to address" do
+      expect(mail.to).to eq(["jake@yahoo.com"])
+    end
+
+
   end
 
 end
