@@ -13,14 +13,24 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-    @user.ip_address = request.env["HTTP_X_FORWARDED_FOR"]
-    binding.pry
-  end
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    @user.ip_address = request.env["HTTP_X_FORWARDED_FOR"] #so far this is not working 
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to new_tour_path, notice: "Your information is entered, now lets update your tour preferences"
+    else
+      render 'edit', notice: "Failed to enter information into system, Try again."
+    end
+
   end
 
 private
