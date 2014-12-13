@@ -5,8 +5,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    binding.pry
+    @user = User.new(user_params)
+    if @user.valid?
+      # send mail to user to sign up for tour
+      render @user, notice: "Successfully entered email: #{@user.email}"
+    else
+      render 'new', notice: "Failed to create, try again."
 
   end
 
