@@ -1,0 +1,12 @@
+<%= render 'layouts/errors', object: @user %>
+
+<% form_for @user, html: {method: :post} do |f| %>
+  <%= f.label :email %>
+  <%= f.input :email %>
+
+  <%= f.hidden_field :first_name, value: "activation" %>
+  <%= f.hidden_field :last_name, value: "activation" %>
+  <%= f.hidden_field :phone, value: "activation" %>
+
+  <%= f.button :submit %>
+<% end %>

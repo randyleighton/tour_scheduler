@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
 
   def index
     @welcome = Welcome.new
+    @user = User.new
   end
 
   def create
