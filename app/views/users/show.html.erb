@@ -1,6 +1,11 @@
 <h3>Account Details</h3>
 
-<p><b>Email</b><% @user.email %></p>
+<p><b>Email: </b><%= @user.email %></p>
+
+<% if @user.first_name !="activation" %>
+  <p><b>Full Name: </b><%= @user.first_name @user.last_name %> </p>
+  <p><b>Phone: </b><%= @user.phone %> </p>
+<% end %>
 
 <br>
 <%= link_to "Welcome Page", root_path %>

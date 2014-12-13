@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       # send mail to user to sign up for tour
-      redirect_to user_path(@user), notice: "Successfully entered email: #{@user.email}"
+      redirect_to user_path(@user), notice: "Look for your sign up email at: #{@user.email}"
     else
       render 'new', notice: "Failed to create, try again."
     end
