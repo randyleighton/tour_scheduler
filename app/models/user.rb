@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :phone, presence: true
   has_many :tours
+  has_many :amenities, through: :tours
 
 end
