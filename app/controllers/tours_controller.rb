@@ -6,6 +6,8 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
+    @user = User.find(params[:format])
+    d
   end
 
   def create

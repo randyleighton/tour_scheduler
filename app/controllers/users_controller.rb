@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to new_tour_path, notice: "Your information is entered, now lets update your tour preferences"
+      redirect_to new_tour_path(@user), notice: "Your information is entered, now lets update your tour preferences"
     else
       render 'edit', notice: "Failed to enter information into system, Try again."
     end
