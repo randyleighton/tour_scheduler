@@ -12,7 +12,7 @@ FactoryGirl.define do
   end
 
   factory :tour do
-    tour_date "12/11/2014"
+    tour_date "2014/12/14"
   end
 
 end
