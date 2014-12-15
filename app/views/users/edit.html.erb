@@ -13,5 +13,8 @@
   <%= f.label :phone %>
   <%= f.text_field :phone, value: "" %>
 
+  <%= f.hidden_field :ip_address, value: @user.ip_address %>
+  <% binding.pry %>
+
   <%= f.button :submit %>
 <% end %>

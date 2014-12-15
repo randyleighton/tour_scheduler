@@ -6,8 +6,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    @user.ip_address = request.remote_ip
-    binding.pry
     if @user.valid?
       redirect_to user_path(@user), notice: "Look for your sign up email at: #{@user.email}"
     else
@@ -22,11 +20,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @user.ip_address = request.remote_ip
     @user.ip_address = request.env["HTTP_X_FORWARDED_FOR"] #so far this is not working 
   end
 
   def update
     @user = User.find(params[:id])
+    @user.ip_address = request.remote_ip
     if @user.update_attributes(user_params)
       redirect_to new_tour_path(@user), notice: "Your information is entered, now lets update your tour preferences"
     else
