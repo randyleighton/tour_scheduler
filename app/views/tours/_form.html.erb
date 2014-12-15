@@ -5,5 +5,11 @@
   <%= f.label "Tour Date",:tour_date %>
   <%= f.date_field :tour_date %>
 
+  <%= f.label "Amenities" %><br /> 
+  <% for amenity in Amenity.all %>
+    <%= check_box_tag 'tour[amenity_ids][]', amenity.id, @tour.amenity_ids.include?(amenity.id) %>
+    <%= label_tag dom_id(amenity), amenity.description, :class => "check_box_label" %>
+  <% end %> 
+
   <%= f.button :submit %>
 <% end %>
