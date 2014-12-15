@@ -2,7 +2,6 @@
 
 This is a challenge exercise to create a scheduler and through a confirmation process, create a tour and email the details to the user and the tour provider.
 == Project by Randy Leighton
-===As of Friday night, I would still like to spend a few more hours in this Sunday, but I wanted to push this all to Github to have status progress online. 
 -
 First, here is the problem given:
 
