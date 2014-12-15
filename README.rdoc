@@ -19,8 +19,10 @@ Views don't need to be styled in any way; plain HTML elements with no CSS at all
 I start with a welcome controller where the user starts out. They choose to schedule a tour and this creates a new user object with the user controller. It only takes the email from them and uses hidden values for what is needed in step 2. They are required in the model for creation. Then I send out a mailer confirmation upon user creation to give them a link to confirm.
 ==Step 2
 The user now is loading to the user edit form and updating their information. It is updated and then the user is sent to the next form: This is going to be the tour creation form
-==Step 3 I am currently here as of Friday night. Continued for a few hours on Sunday. Step 3 creates a new tour object, passes in the user information and uses a checkbox to allow them to pick from amenities. So far this was the most challenging thing to work on, it was pretty awesome to get work and see the values going back into the controller. I was then starting to work on the user IP address, and though I started on it, time ran out and it i WIP.
-==Step 4 This leaves off at step 4 on 12/14 to do what I could in 5-6 hours.
+==Step 3
+I am currently here as of Friday night. Continued for a few hours on Sunday. Step 3 creates a new tour object, passes in the user information and uses a checkbox to allow them to pick from amenities. So far this was the most challenging thing to work on, it was pretty awesome to get work and see the values going back into the controller. I was then starting to work on the user IP address, and though I started on it, time ran out and it i WIP.
+==Step 4 
+This leaves off at step 4 on 12/14 to do what I could in 5-6 hours.
 
 
 ===This is ruby 2.1.1 and Rails 4.1.8 and PostgreSQL
