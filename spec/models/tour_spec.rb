@@ -10,5 +10,7 @@ describe Tour do
     tour = FactoryGirl.create(:tour, tour_date: "2014/12/14", user_id: user.id)
     expect(tour.valid?).to be true
   end
+  
+  
 
 end

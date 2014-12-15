@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 root 'welcome#index'
 
-resources :tours
 resources :amenities
 resources :users
+resources :tours do
+  resources :users
+  end
 
 end

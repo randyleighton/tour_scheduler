@@ -1,0 +1,9 @@
+<%= render 'layouts/errors', object: @tour %>
+
+<%= form_for ([@tour]) do |f| %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.label "Tour Date",:tour_date %>
+  <%= f.date_field :tour_date %>
+
+  <%= f.button :submit %>
+<% end %>
