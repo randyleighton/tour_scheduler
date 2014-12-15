@@ -12,6 +12,8 @@ class ToursController < ApplicationController
   def create
     @tour = Tour.create(tour_params)
     if @tour.valid?
+      # UserMailers send out tour confirmation to user
+      # UserMailer send out tour appointment to the tours@example.com
       redirect_to tour_path(@tour), notice: "Your tour has been scheduled successfully"
     else
       render 'new', "Please try again, failed to schedule the tour."

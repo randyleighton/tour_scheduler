@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    @user.ip_address = request.remote_ip
+    binding.pry
     if @user.valid?
       redirect_to user_path(@user), notice: "Look for your sign up email at: #{@user.email}"
     else
