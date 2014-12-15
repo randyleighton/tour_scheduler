@@ -13,7 +13,6 @@ class ToursController < ApplicationController
     @tour = Tour.create(tour_params)
     if @tour.valid?
       redirect_to tour_path(@tour), notice: "Your tour has been scheduled successfully"
-      #send some mailers
     else
       render 'new', "Please try again, failed to schedule the tour."
     end
